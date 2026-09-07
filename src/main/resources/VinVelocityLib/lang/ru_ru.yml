@@ -1,0 +1,3 @@
+Lang:
+  not_enough_arguments: "<red>Недостаточно аргументов."
+  reload_message: "<green>Плагин перезагружен."
