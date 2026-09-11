@@ -7,14 +7,14 @@ import com.velocitypowered.api.command.CommandSource;
 import com.velocitypowered.api.proxy.ProxyServer;
 import org.saintqd.asurevelocitylib.AsureVelocityLib;
 import org.saintqd.asurevelocitylib.managers.LangManager;
-import org.saintqd.asurevelocitylib.utils.VinUtils;
+import org.saintqd.asurevelocitylib.utils.AsureUtils;
 
-public class VinVelocityLibCommands {
+public class AsureVelocityLibCommands {
 
     public static BrigadierCommand setupCommands(final ProxyServer proxy) {
         return new BrigadierCommand(
-                BrigadierCommand.literalArgumentBuilder("vinvelocitylib")
-                        .requires(source -> source.hasPermission("vinvelocitylib.admin"))
+                BrigadierCommand.literalArgumentBuilder("asurevelocitylib")
+                        .requires(source -> source.hasPermission("asurevelocitylib.admin"))
                         .then(BrigadierCommand.literalArgumentBuilder("reload")
                                 .executes(ctx -> {
                                     reloadCommand(ctx.getSource());
@@ -45,6 +45,6 @@ public class VinVelocityLibCommands {
 
     private static void changeDebugLevelCommand(CommandSource sender, int level) {
         AsureVelocityLib.inst().setDebugLevel(level);
-        sender.sendMessage(VinUtils.parseString("<gray>Debug level set to <blue>"+level+"<gray>."));
+        sender.sendMessage(AsureUtils.parseString("<gray>Debug level set to <blue>"+level+"<gray>."));
     }
 }

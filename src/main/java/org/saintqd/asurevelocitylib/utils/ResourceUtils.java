@@ -1,6 +1,6 @@
 package org.saintqd.asurevelocitylib.utils;
 
-import org.saintqd.asurevelocitylib.api.VinPlugin;
+import org.saintqd.asurevelocitylib.api.AsurePlugin;
 import org.saintqd.asurevelocitylib.configuration.file.YamlConfiguration;
 
 import java.io.File;
@@ -25,7 +25,7 @@ public class ResourceUtils {
      * @param plugin Плагин, в котором содержатся требуемые ресурсы
      * @param pluginFile Объект файла плагина
      */
-    public static void fetchAllResources(VinPlugin plugin, File pluginFile) throws IOException {
+    public static void fetchAllResources(AsurePlugin plugin, File pluginFile) throws IOException {
 
         String pluginName = plugin.getName();
         List<String> resourcePaths = getResources(pluginFile, Pattern.compile("("+ pluginName +"/(.*)+.yml)"));
@@ -46,7 +46,7 @@ public class ResourceUtils {
      * @param resourcePath Путь к ресурсу в файлах плагина
      * @param outputPath Путь к местоположению, в котором будет размещён ресурс
      */
-    private static void fetchYamlResource(VinPlugin plugin, String resourcePath, String outputPath) throws IOException {
+    private static void fetchYamlResource(AsurePlugin plugin, String resourcePath, String outputPath) throws IOException {
         File resourceFile = new File(outputPath);
         if (!resourceFile.exists()) {
             if (resourceFile.mkdirs()) {
@@ -56,7 +56,7 @@ public class ResourceUtils {
                     }
                 }
             }
-            else VinUtils.sendDebugMessage(0,"<yellow>Could not create resource file at "+outputPath+"!");
+            else AsureUtils.sendDebugMessage(0,"<yellow>Could not create resource file at "+outputPath+"!");
         }
         else {
             String fileNameWithoutExt = outputPath.replaceFirst("[.][^.]+$","");

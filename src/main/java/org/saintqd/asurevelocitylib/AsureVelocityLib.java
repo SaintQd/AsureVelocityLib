@@ -9,8 +9,8 @@ import com.velocitypowered.api.plugin.annotation.DataDirectory;
 import com.velocitypowered.api.proxy.ProxyServer;
 import net.kyori.adventure.key.Key;
 import org.jetbrains.annotations.NotNull;
-import org.saintqd.asurevelocitylib.api.VinPlugin;
-import org.saintqd.asurevelocitylib.commands.VinVelocityLibCommands;
+import org.saintqd.asurevelocitylib.api.AsurePlugin;
+import org.saintqd.asurevelocitylib.commands.AsureVelocityLibCommands;
 import org.saintqd.asurevelocitylib.configuration.file.FileConfiguration;
 import org.saintqd.asurevelocitylib.configuration.file.YamlConfiguration;
 import org.saintqd.asurevelocitylib.managers.LangManager;
@@ -28,7 +28,7 @@ import java.util.HashMap;
         version = "1.0.0",
         authors = {"SaintQd"}
 )
-public class AsureVelocityLib implements VinPlugin {
+public class AsureVelocityLib implements AsurePlugin {
 
     private static AsureVelocityLib plugin;
     private YamlConfiguration config = null;
@@ -59,7 +59,7 @@ public class AsureVelocityLib implements VinPlugin {
             ex.printStackTrace();
         }
 
-        BrigadierCommand mainCommand = VinVelocityLibCommands.setupCommands(server);
+        BrigadierCommand mainCommand = AsureVelocityLibCommands.setupCommands(server);
         server.getCommandManager().register(
                 server.getCommandManager().metaBuilder(mainCommand)
                         .plugin(this)
@@ -102,7 +102,7 @@ public class AsureVelocityLib implements VinPlugin {
 
     @Override
     public String getName() {
-        return "VinVelocityLib";
+        return "AsureVelocityLib";
     }
 
     @Override
@@ -112,7 +112,7 @@ public class AsureVelocityLib implements VinPlugin {
 
     @Override
     public @NotNull String namespace() {
-        return "vinvelocitylib";
+        return "asurevelocitylib";
     }
 
     @Override

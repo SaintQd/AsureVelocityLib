@@ -5,7 +5,7 @@ import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.saintqd.asurevelocitylib.AsureVelocityLib;
 
-public class VinUtils {
+public class AsureUtils {
 
     public static Component parseString(String text) {
         if (text.contains("<italic>") || text.contains("<i>"))

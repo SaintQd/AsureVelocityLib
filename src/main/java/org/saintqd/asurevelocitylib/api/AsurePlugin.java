@@ -5,7 +5,7 @@ import org.saintqd.asurevelocitylib.configuration.file.FileConfiguration;
 
 import java.nio.file.Path;
 
-public interface VinPlugin extends Namespaced {
+public interface AsurePlugin extends Namespaced {
 
     String getName();
 
